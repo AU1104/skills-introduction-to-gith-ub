@@ -69,3 +69,18 @@ for ip in net:
     if n.count('1') % 5 == 0:
         c += 1
 print(c)
+
+from ipaddress import *
+
+8.
+
+
+for mask in range(32, -1, -1):
+    net = ip_network(f'154.63.206.129/{mask}', 0)
+    if ip_address('154.63.100.75') in net:
+        c = 0
+        for ip in net:
+            n = f'{ip:b}'
+            if n.count('1') % 2 == 0:
+                c += 1
+        print(c)
