@@ -38,3 +38,14 @@ for i in open('9_19481.txt'):
             c += 1
 
 print(c)
+
+5.
+
+num = c = 0
+for i in open('9_19481.txt'):
+    a = [int(x) for x in i.split()]
+    num += 1
+    a.sort()
+    if len(set(a)) == len(a) and (a[0] + a[3] )**2 > a[1]**3 + a[2]**3:
+        c += num
+print(c)
