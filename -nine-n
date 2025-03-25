@@ -25,3 +25,16 @@ for i in open('9_19481.txt'):
     if (a[3] + a[0]) ** 2 > a[1]**2 + a[2]**2:
         c += 1
 print(c)
+
+4.
+
+c = 0
+for i in open('9_19481.txt'):
+    a = [int(x) for x in i.split()]
+    pov = [x for x in a if a.count(x) == 3]
+    nepov = [x for x in a if a.count(x) == 1]
+    if len(set(pov)) == 2:
+        if sum (pov) / len(pov) < nepov[0]:
+            c += 1
+
+print(c)
