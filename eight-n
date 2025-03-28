@@ -40,3 +40,15 @@ for i in permutations(range(8), r=5):
     if i.count(1) == 0 and i[0] % 2 != i[1] % 2 != i[2] % 2!= i[3] % 2 != i[4] % 2 and i[0] != 0:
         c += 1
 print(c)
+
+5.
+
+from itertools import *
+
+c = 0
+for i in product('ОГЭИНФ', repeat=6):
+    s = ''.join(i)
+    if s[0] in 'ЭО' and  s[-2:] == 'НФ' and s.count('ИГ') > 0 and s.count('ОГЭ') == 0:
+        c += 1
+print(c)
+
