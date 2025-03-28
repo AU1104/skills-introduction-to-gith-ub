@@ -1,0 +1,42 @@
+1-type
+
+
+1.
+from itertools import *
+
+c = 0
+for i in product('ШКОЛА', repeat=3):
+    if i.count('К') == 1:
+        c += 1
+print(c)
+
+2.
+from itertools import *
+
+c = 0
+for i in product('АВСХ', repeat=5):
+    if (i[0] == 'Х' and i.count('Х') == 1) or i.count('Х') == 0:
+        c += 1
+print(c) 
+
+3.
+Сис.исч
+
+from itertools import *
+
+c = 0
+for i in product(range(16), repeat=5):
+    if i[0] != 1 and i[-1] % 2 != 0 and i[0] != 0:
+        c += 1
+print(c)
+
+4.
+Все цифры различны
+
+from itertools import *
+
+c = 0
+for i in permutations(range(8), r=5):
+    if i.count(1) == 0 and i[0] % 2 != i[1] % 2 != i[2] % 2!= i[3] % 2 != i[4] % 2 and i[0] != 0:
+        c += 1
+print(c)
