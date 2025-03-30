@@ -86,3 +86,29 @@ for i in product(range(12), repeat=5):
 print(c)
 
 
+
+2-type
+
+from itertools import *
+
+1.
+
+
+p = 1
+for i in product('АКРУ', repeat=5):
+    s = ''.join(i)
+    if p == 350:
+        print(p, s)
+    p += 1
+
+
+2.
+
+from itertools import *
+
+p = 1
+for i in product('АОУ', repeat=5):
+    s = ''.join(i)
+    if s == 'УАУАУ':
+        print(p, s)
+    p += 1
