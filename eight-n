@@ -112,3 +112,15 @@ for i in product('АОУ', repeat=5):
     if s == 'УАУАУ':
         print(p, s)
     p += 1
+
+
+3.
+from itertools import *
+
+p = 1
+for i in product('ДЕКОР', repeat=4):
+    s = ''.join(i)
+    if s[0] == 'К':
+        print(p, s)
+        break
+    p += 1
