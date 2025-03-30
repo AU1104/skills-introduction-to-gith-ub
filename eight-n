@@ -137,3 +137,70 @@ for i in product('АПРСУ', repeat=5):
         break
     p += 1
 
+5.
+
+from itertools import *
+
+p = 1
+for i in product('КОСУФ', repeat=5):
+    s = ''.join(i)
+    if s.count('У') == 2 and 'Ф' not in s:
+        print(p, s)
+    p += 1
+
+
+6.
+
+from itertools import *
+
+p = 1
+c = 0
+for i in product('АИКМНОПЯ', repeat=6):
+    s = ''.join(i)
+    if p % 2 != 0 and s[0] not in 'М' and s.count('И') == 3:
+        c += 1
+    p += 1
+print(c)
+
+7.
+
+from itertools import *
+
+p = 1
+c = 0
+for i in product('ЬРПЛЕА', repeat=5):
+    s = ''.join(i)
+    if p > 387:
+        print(c)
+        break
+    if s[-1] == 'Ь':
+        c += 1
+    p += 1
+
+8.
+
+from itertools import *
+
+c = 0
+for i in product('012345678', repeat=5):
+    s = ''.join(i)
+    if s[0] != '0' and s.count('0') == 1 and '10' not in s and '01' not in s and '30' not in s and '03' not in s and '50' not in s and '05' not in s and '70' not in s and '07' not in s:
+        c += 1
+print(c)
+
+9.
+
+from itertools import *
+
+c = 0
+for i in product(range(9), repeat=5):
+    if i[0] != 0 and i.count(0) == 1:
+        ind_z = i.index(0)
+        if ind_z != 4:
+            if i[ind_z - 1] % 2 != 0 and i[ind_z + 1] % 2 != 0:
+                c += 1
+        else:
+            if i[ind_z - 1] % 2 != 0:
+                c += 1
+print(c)
+
