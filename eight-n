@@ -75,3 +75,14 @@ for i in permutations('ТИКТОК'):
 print(len(set(lst)))
 print(c)
 
+8.
+
+from itertools import *
+
+c = 0
+for i in product(range(12), repeat=5):
+    if i[0] != 0 and i.count(7) == 1 and i.count(9) + i.count(10) + i.count(11) <= 3:
+        c += 1
+print(c)
+
+
