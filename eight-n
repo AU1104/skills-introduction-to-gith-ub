@@ -124,3 +124,16 @@ for i in product('ДЕКОР', repeat=4):
         print(p, s)
         break
     p += 1
+
+4.
+
+from itertools import *
+
+p = 1
+for i in product('АПРСУ', repeat=5):
+    s = ''.join(i)
+    if s[0] == 'У' and 'АА' not in s:
+        print(p, s)
+        break
+    p += 1
+
