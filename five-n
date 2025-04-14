@@ -1,3 +1,5 @@
+1.
+
 for i in range(1, 100):
     N = i
     n = bin(N)[2:]
@@ -5,5 +7,78 @@ for i in range(1, 100):
     n = n + str(n.count('1') % 2)
     r = int(n, 2)
     if r > 77:
+        print(i)
+        break
+
+2.    
+
+for i in range(1, 100):
+    N = i
+    n = bin(N)[2:]
+    if N % 2 == 0:
+        n = n + '00'
+    else:
+        n = n + '11'
+    r = int(n, 2)
+    if r  > 115:
+        print(i)
+        break
+
+3.
+
+def f(n, base):
+    s = ''
+    while n > 0:
+        s = str(n % base) + s
+        n = n // base
+    return s
+
+for i in range(1, 100):
+    N = i
+    n = f(N, 3)
+    if N % 2 == 0:
+        n = '1' + n + '00'
+    else:
+        su = sum([int(x) for x in n])
+        su = n + f(su, 3)
+    r = int(n, 3)
+    if r > 168:
+        print(i)
+        break
+
+4.
+
+def f(n, base):
+    s = ''
+    while n > 0:
+        s = str(n % base) + s
+        n = n // base
+    return s
+
+lst = []
+for i in range(1, 100):
+    N = i
+    n = f(N, 6)
+    if N % 3 == 0:
+        n = n + n[:2]
+    else:
+        n = n + f(N% 3 * 10, 6)
+    r = int(n, 6)
+    if r > 680:
+        lst.append(r)
+print(min(lst))
+
+5.
+
+for i in range(1, 1000):
+    N = i
+    n = bin(N)[2:]
+    if n.count('1') > n.count('0'):
+        n += '0'
+    else:
+        n += '11'
+
+    r = int(n, 2)
+    if r > 2019:
         print(i)
         break
