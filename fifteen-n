@@ -138,3 +138,39 @@ for a1, a2 in combinations(ox, 2):
     if all(f(x) == 1 for x in ox):
         lst.append(a2 - a1)
 print(max(lst))
+
+3.
+
+from itertools import *
+
+def f(x):
+    p = 4 <= x <= 15
+    q = 12 <= x <= 20
+    a = a1 <= x <= a2
+    return (p and q) <= a
+
+lst = []
+ox = [i/4 for i in range(3*4, 20*4)]
+for a1, a2 in combinations(ox, 2):
+    if all(f(x) == 1 for x in ox):
+        lst.append(a2 - a1)
+
+print(min(lst))
+
+4.
+
+from itertools import *
+
+def f(x):
+    p = 130 <= x <= 171
+    q = 150 <= x <= 185
+    a = a1 <= x <= a2
+    return p <= ((q and (not a)) <= (not p))
+
+lst = []
+ox = [i/4 for i in range(129*4, 186*4)]
+for a1, a2 in combinations(ox, 2):
+    if all(f(x) == 1 for x in ox):
+        lst.append(a2 - a1)
+
+print(min(lst))
