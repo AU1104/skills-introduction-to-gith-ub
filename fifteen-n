@@ -120,3 +120,21 @@ for a1, a2 in combinations(ox, 2):
     if all(f(x) == 1 for x in ox):
         lst.append(a2 - a1)
 print(max(lst))
+
+
+2.
+
+from itertools import *
+
+def f(x):
+    p = 10 <= x <= 29
+    q =  13 <= x <= 18
+    a = a1 <= x <= a2
+    return (a <= p) or q
+
+lst = []
+ox = [i/4 for i in range(9* 4, 30*4)]
+for a1, a2 in combinations(ox, 2):
+    if all(f(x) == 1 for x in ox):
+        lst.append(a2 - a1)
+print(max(lst))
